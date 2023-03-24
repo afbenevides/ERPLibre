@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ERPLIBRE_ODOO_VERSION=${1:-12} # Set a default value of 12 if no parameter is passed
+
 . ./env_var.sh
 source .venv/bin/activate
 #EL_MANIFEST_PROD="./default.xml"

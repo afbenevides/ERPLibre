@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+
 . ./env_var.sh
+
+ERPLIBRE_ODOO_VERSION=${1:-12} # Set a default value of 12 if no parameter is passed
 
 ./script/install/install_locally.sh
 retVal=$?
@@ -10,7 +13,7 @@ if [[ $retVal -ne 0 ]]; then
 fi
 
 # Update git-repo
-./script/manifest/update_manifest_local_dev.sh
+./script/manifest/update_manifest_local_dev.sh ${ERPLIBRE_ODOO_VERSION}
 retVal=$?
 if [[ $retVal -ne 0 ]]; then
     echo "Error manifest update, check git-repo."
