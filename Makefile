@@ -70,17 +70,21 @@ run_parallel_cg_migrator:
 #############
 #  INSTALL  #
 #############
+
+# Define a variable for the version number
+VERSION ?= 12
+
 .PHONY: install
 install:install_os install_dev
 
 .PHONY: install_dev
 install_dev:
-	./script/install/install_locally_dev.sh
+	./script/install/install_locally_dev.sh $(VERSION)
 
 # Install this for the first time of dev environment
 .PHONY: install_os
 install_os:
-	./script/install/install_dev.sh
+	./script/install/install_dev.sh $(VERSION)
 
 .PHONY: install_production
 install_production:
