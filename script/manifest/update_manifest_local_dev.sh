@@ -16,6 +16,10 @@ if [ "$#" -ge 1 ]; then
   fi
 fi
 
+#TODO add a commit here after modificaiton, if not it wont be taken in account by repo checkout step
+
+#TODO add the part that go make available all the versions of odoo other then the default one... one do it in a manual step before that.
+
 source .venv/bin/activate
 #EL_MANIFEST_PROD="./default.xml"
 #EL_MANIFEST_DEV="./manifest/default.dev.xml"
