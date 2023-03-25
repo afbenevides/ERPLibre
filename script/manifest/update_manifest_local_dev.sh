@@ -5,7 +5,8 @@
 cp ${EL_MANIFEST_DEV} ./manifest/version_asked.dev.xml
 if [ "$#" -ge 1 ]; then
   # There is a first argument so we want another version of odoo then the default 12
-  ERPLIBRE_ODOO_VERSION=${1} # Set a default value of 12 if no parameter is passed
+  ERPLIBRE_ODOO_VERSION=${1-12} # Set a default value of 12 if no parameter is passed
+  echo "ERPLIBRE_ODOO_VERSION est : ${ERPLIBRE_ODOO_VERSION}"
   if [[ "$(uname)" == "Darwin" ]]; then
     # macOS
     sed -i "" "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
