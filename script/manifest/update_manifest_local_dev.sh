@@ -7,13 +7,15 @@ if [ "$#" -ge 1 ]; then
   # There is a first argument so we want another version of odoo then the default 12
   ERPLIBRE_ODOO_VERSION=${1-12} # Set a default value of 12 if no parameter is passed
   echo "ERPLIBRE_ODOO_VERSION est : ${ERPLIBRE_ODOO_VERSION}"
-  if [[ "$(uname)" == "Darwin" ]]; then
-    # macOS
-    sed -i "" "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
-  else
-    # Linux
-    sed -i "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
-  fi
+#  if [[ "$(uname)" == "Darwin" ]]; then
+#    # macOS
+#    sed -i "" "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
+#  else
+#    # Linux
+#    sed -i "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
+#  fi
+  python3 ./script/manifest/odoo_version_manifest_changes.py ${ERPLIBRE_ODOO_VERSION}
+  git commit -m "modified for odoo version wanted"
 fi
 
 #TODO add a commit here after modificaiton, if not it wont be taken in account by repo checkout step
