@@ -9,6 +9,7 @@ if [ "$#" -ge 1 ]; then
   echo "ERPLIBRE_ODOO_VERSION est : ${ERPLIBRE_ODOO_VERSION}"
   if [[ "$(uname)" == "Darwin" ]]; then
     # macOS
+    echo "In darwin !!!"
     sed -i "" "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
   else
     # Linux
