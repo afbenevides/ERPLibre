@@ -51,4 +51,4 @@ git ls-remote git://127.0.0.1:9418/
 
 ./.venv/repo sync -v --force-sync -m "./manifest/version_asked.dev.xml"
 
-#kill ${DAEMON_PID}
+kill ${DAEMON_PID}
