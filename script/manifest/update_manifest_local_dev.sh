@@ -40,7 +40,8 @@ git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
 DAEMON_PID=$!
 
   echo "Execution de repo"
-./.venv/repo init -u git://127.0.0.1:9418/ -b $(git rev-parse --verify HEAD) -m "./manifest/version_asked.dev.xml"
+#./.venv/repo init -u git://127.0.0.1:9418/ -b $(git rev-parse --verify HEAD) -m "./manifest/version_asked.dev.xml"
+./.venv/repo init -u git://127.0.0.1:9418/ -b $(git rev-parse --abbrev-ref) -m "./manifest/version_asked.dev.xml"
   echo "Synch de repo"
 
 ./.venv/repo sync -v --force-sync -m "./manifest/version_asked.dev.xml"
