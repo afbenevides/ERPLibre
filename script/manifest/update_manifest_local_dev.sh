@@ -16,8 +16,15 @@ if [ "$#" -ge 1 ]; then
     sed -i "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
   fi
   read -p "Press Enter to continue..." # wait for user input
+  git status
   git add -A
+  echo "AFTER ADD"
+  git status
+
+  read -p "Press Enter to continue..." # wait for user input
   git commit -m "modified for odoo version wanted : ${ERPLIBRE_ODOO_VERSION} "
+  read -p "Press Enter to continue..." # wait for user input
+
 fi
 
 #TODO add a commit here after modificaiton, if not it wont be taken in account by repo checkout step
