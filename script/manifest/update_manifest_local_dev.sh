@@ -40,6 +40,10 @@ source .venv/bin/activate
 # Update git-repo
 git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose &
 DAEMON_PID=$!
+echo "Execution de COMMANDE   git ls-remote git://127.0.0.1:9418/"
+
+
+git ls-remote git://127.0.0.1:9418/
 
   echo "Execution de repo"
 ./.venv/repo init -u git://127.0.0.1:9418/ -b $(git rev-parse --verify HEAD) -m ./manifest/version_asked.dev.xml
