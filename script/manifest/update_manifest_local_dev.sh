@@ -38,7 +38,7 @@ source .venv/bin/activate
 #EL_MANIFEST_DEV="./manifest/default.dev.xml"
 
 # Update git-repo
-git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose &
+git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose 
 DAEMON_PID=$!
 echo "Execution de COMMANDE   git ls-remote git://127.0.0.1:9418/"
 
