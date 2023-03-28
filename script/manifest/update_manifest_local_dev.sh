@@ -23,6 +23,8 @@ if [ "$#" -ge 1 ]; then
 
   read -p "Press Enter to continue..." # wait for user input
   git commit -m "modified for odoo version wanted : ${ERPLIBRE_ODOO_VERSION} "
+  git status
+  git rev-parse --verify HEAD
   read -p "Press Enter to continue..." # wait for user input
 
 fi
