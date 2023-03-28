@@ -41,7 +41,7 @@ source .venv/bin/activate
 git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose &
 DAEMON_PID=$!
 echo "Execution de COMMANDE   git ls-remote git://127.0.0.1:9418/"
-
+sleep 5
 
 git ls-remote git://127.0.0.1:9418/
 
