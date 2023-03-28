@@ -15,6 +15,7 @@ if [ "$#" -ge 1 ]; then
     # Linux
     sed -i "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
   fi
+  read -p "Press Enter to continue..." # wait for user input
   git add -A
   git commit -m "modified for odoo version wanted : ${ERPLIBRE_ODOO_VERSION} "
 fi
