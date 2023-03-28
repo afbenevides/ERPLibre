@@ -11,6 +11,8 @@ if [ "$#" -ge 1 ]; then
     # macOS
     echo "In darwin !!!"
     sed -i.bak 's/\(revision="[^"]*\)12\([^"]*"\)/\1'"${ERPLIBRE_ODOO_VERSION}"'\2/g' ./manifest/version_asked.dev.xml
+    sed -i.bak 's/\(revision="[^"]*\)ERPLibre\/\([^"]*"\)/\1'""'\2/g' ./manifest/version_asked.dev.xml
+
   else
     # Linux
     sed -i "s/\(revision=\"[^\".]*\.\)\(12\)\([^\".]*\"\)/\1${ERPLIBRE_ODOO_VERSION}\3/g" "./manifest/version_asked.dev.xml"
