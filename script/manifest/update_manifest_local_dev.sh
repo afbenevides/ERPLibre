@@ -17,7 +17,7 @@ if [ "$#" -ge 1 ]; then
   fi
   read -p "Press Enter to continue..." # wait for user input
   git status
-  git add -A
+  git add ./manifest/version_asked.dev.xml
   echo "AFTER ADD"
   git status
 
