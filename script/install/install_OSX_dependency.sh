@@ -29,8 +29,7 @@ sudo su - postgres -c "CREATE EXTENSION postgis;\nCREATE EXTENSION postgis_topol
 # Install Dependencies
 #--------------------------------------------------
 echo  "\n--- Installing Python 3 + pip3 --"
-#TODO is python@3.7 line here still usefull?? Should we get rid of it?
-brew install git python@3.7 wget parallel mariadb
+brew install git python wget parallel mariadb
 brew link git
 brew link wget
 
