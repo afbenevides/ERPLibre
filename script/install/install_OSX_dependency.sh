@@ -29,7 +29,9 @@ sudo su - postgres -c "CREATE EXTENSION postgis;\nCREATE EXTENSION postgis_topol
 # Install Dependencies
 #--------------------------------------------------
 echo  "\n--- Installing Python 3 + pip3 --"
-brew install git python wget parallel mariadb
+brew install git python wget parallel mariadb pygobject3
+
+
 brew link git
 brew link wget
 
