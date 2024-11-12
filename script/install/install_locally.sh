@@ -51,7 +51,11 @@ if [[ ! -n "${DOCKER_BUILD}" ]]; then
       # To change version
       # rm ~/.pyenv to uninstall it
       curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+  else
+      # To update .pyenv to ensure version asked is available
+      cd ~/.pyenv/ && git pull && cd -
   fi
+
 
   echo -e "\n---- Export pyenv in ${PYENV_PATH} ----"
   export PATH="${PYENV_PATH}/bin:$PATH"
