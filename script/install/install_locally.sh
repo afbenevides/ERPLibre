@@ -87,11 +87,11 @@ if [[ ! -n "${DOCKER_BUILD}" ]]; then
           exit 1
       fi
   fi
-  source ./.venv/bin/activate
 else
   mkdir .venv
 fi
 
+source ./.venv/bin/activate
 #if [[ ! -d "${POETRY_PATH}" ]]; then
 #    # Delete directory ~/.poetry and .venv to force update to new version
 #    echo -e "\n---- Installing poetry ${LOCAL_PYTHON_EXEC} for reliable python package ----"
@@ -109,11 +109,6 @@ if [[ ! -f ${VENV_REPO_PATH} ]]; then
     sed -i "1 i ${PYTHON_HASHBANG}" ${VENV_REPO_PATH}
 fi
 
-# Make .venv active
-if [[ "${OSTYPE}" == "darwin"* ]]; then
-  echo -e "=======>source .venv/bin/activate here!!!    <==============="
-  source .venv/bin/activate
-fi
 echo -e "\n---- Installing poetry dependency ----"
 ${VENV_PATH}/bin/pip install --upgrade pip
 # Force python instead of changing env
